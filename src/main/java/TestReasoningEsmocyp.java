@@ -46,7 +46,17 @@ public class TestReasoningEsmocyp {
                 + "?p a :NaoVeioTrabalhar . "
                 + "} ";
 
-        File esmocypData = new File(classLoader.getResource("esmocypData.rdf").getFile());
+        String queryBody3 = "REGISTER QUERY staticKnowledge AS "
+                + "PREFIX :<urn:x-hp:eg/> "
+                + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                + "SELECT ?p ?s  "
+                + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
+                + "FROM <http://streamreasoning.org/hospital-data> "
+                + "WHERE { "
+                + "?p :temSensorMuitoQuente ?s . "
+                + "} ";
+
+        File esmocypData = new File(classLoader.getResource("root-ontology-data.rdf").getFile());
         String roomConnectionPath = esmocypData.getAbsolutePath();
 
         engine.putStaticNamedModel("http://streamreasoning.org/hospital-data", CsparqlUtils.serializeRDFFile(roomConnectionPath));
@@ -61,7 +71,7 @@ public class TestReasoningEsmocyp {
         fbThread.start();
 
         //Register new query in the engine
-        CsparqlQueryResultProxy c = engine.registerQuery(queryBody2, false);
+        CsparqlQueryResultProxy c = engine.registerQuery(queryBody3, false);
 
         //Attach a result consumer to the query result proxy to print the results on the console
         c.addObserver(new ConsoleFormatter());
@@ -69,7 +79,7 @@ public class TestReasoningEsmocyp {
         File rdfsRulesFile = new File(classLoader.getResource("owl.rules").getFile());
         String rulesPath = rdfsRulesFile.getAbsolutePath();
 
-        File tboxFile = new File(classLoader.getResource("tbox-esmocyp.rdf").getFile());
+        File tboxFile = new File(classLoader.getResource("root-ontology.owl").getFile());
         String tboxPath = tboxFile.getAbsolutePath();
 
         engine.updateReasoner(
