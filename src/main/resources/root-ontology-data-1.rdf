@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:eg="urn:x-hp:eg/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <NamedIndividual rdf:about="http://webprotege.stanford.edu/sensor3">
+        <rdf:type rdf:resource="urn:x-hp:eg/Sensor"/>
+        <rdfs:label>sensor3</rdfs:label>
+    </NamedIndividual>
+
+    <NamedIndividual rdf:about="http://webprotege.stanford.edu/sensor2">
+        <rdf:type rdf:resource="urn:x-hp:eg/Sensor"/>
+        <rdfs:label>sensor2</rdfs:label>
+    </NamedIndividual>
+
+    <NamedIndividual rdf:about="http://webprotege.stanford.edu/sensor1">
+        <rdf:type rdf:resource="urn:x-hp:eg/Sensor"/>
+        <rdfs:label>sensor1</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCfjmZufI5Y59wlzZojepes -->
+
+    <NamedIndividual rdf:about="http://webprotege.stanford.edu/sala1">
+        <rdf:type rdf:resource="urn:x-hp:eg/Sala"/>
+        <eg:temSensorMuitoQuente rdf:resource="http://webprotege.stanford.edu/sensor1"/>
+        <eg:temSensorMuitoQuente rdf:resource="http://webprotege.stanford.edu/sensor2"/>
+        <eg:temSensorMuitoQuente rdf:resource="http://webprotege.stanford.edu/sensor3"/>
+        <rdfs:label>sala1</rdfs:label>
+    </NamedIndividual>
+
+    <AllDifferent>
+        <distinctMembers rdf:parseType="Collection">
+            <Thing rdf:about="http://webprotege.stanford.edu/sensor1"/>
+            <Thing rdf:about="http://webprotege.stanford.edu/sensor2"/>
+            <Thing rdf:about="http://webprotege.stanford.edu/sensor3"/>
+        </distinctMembers>
+    </AllDifferent>
+
+</rdf:RDF>
+

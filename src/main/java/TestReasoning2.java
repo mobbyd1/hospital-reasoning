@@ -41,7 +41,7 @@ public class TestReasoning2 {
 
             ClassLoader classLoader = TestReasoning.class.getClassLoader();
 
-            File roomConnection = new File(classLoader.getResource("roomConnection.rdf").getFile());
+            File roomConnection = new File(classLoader.getResource("others/roomConnection.rdf").getFile());
             String roomConnectionPath = roomConnection.getAbsolutePath();
 
             engine.putStaticNamedModel("http://streamreasoning.org/roomConnection", CsparqlUtils.serializeRDFFile(roomConnectionPath));

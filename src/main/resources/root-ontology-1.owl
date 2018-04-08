@@ -32,16 +32,29 @@
 
     <ObjectProperty rdf:about="urn:x-hp:eg/temSensorMuitoQuente">
         <rdfs:subPropertyOf rdf:resource="urn:x-hp:eg/temSensor"/>
-    </ObjectProperty>    <!--
+    </ObjectProperty>
+
+    <ObjectProperty rdf:about="urn:x-hp:eg/temSensorQuente">
+        <rdfs:subPropertyOf rdf:resource="urn:x-hp:eg/temSensor"/>
+    </ObjectProperty>
+
+    <ObjectProperty rdf:about="urn:x-hp:eg/temSensorMuitoFrio">
+        <rdfs:subPropertyOf rdf:resource="urn:x-hp:eg/temSensor"/>
+    </ObjectProperty>
+
+    <ObjectProperty rdf:about="urn:x-hp:eg/temSensorFrio">
+        <rdfs:subPropertyOf rdf:resource="urn:x-hp:eg/temSensor"/>
+    </ObjectProperty>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- urn:x-hp:eg/Sala -->
 
@@ -64,36 +77,10 @@
             </Class>
         </equivalentClass>
     </Class>
-    
-
 
     <!-- urn:x-hp:eg/Sensor -->
 
     <Class rdf:about="urn:x-hp:eg/Sensor"/>
-    
-
-
-    <!-- urn:x-hp:eg/SensorMuitoFrio -->
-
-    <Class rdf:about="urn:x-hp:eg/SensorMuitoFrio">
-        <rdfs:subClassOf rdf:resource="urn:x-hp:eg/Sensor"/>
-    </Class>
-    
-
-
-    <!-- urn:x-hp:eg/SensorMuitoQuente -->
-
-    <Class rdf:about="urn:x-hp:eg/SensorMuitoQuente">
-        <rdfs:subClassOf rdf:resource="urn:x-hp:eg/Sensor"/>
-    </Class>
-    
-
-
-    <!-- urn:x-hp:eg/SensorNormal -->
-
-    <Class rdf:about="urn:x-hp:eg/SensorNormal">
-        <rdfs:subClassOf rdf:resource="urn:x-hp:eg/Sensor"/>
-    </Class>
 
 </rdf:RDF>
 

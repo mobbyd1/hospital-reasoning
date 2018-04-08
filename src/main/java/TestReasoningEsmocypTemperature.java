@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * Created by ruhandosreis on 19/08/17.
  */
-public class TestReasoningEsmocyp {
+public class TestReasoningEsmocypTemperature {
 
     public static void main(String[] args) throws Exception {
 
@@ -27,33 +27,13 @@ public class TestReasoningEsmocyp {
 
         String queryBody = "REGISTER QUERY staticKnowledge AS "
                 + "PREFIX :<urn:x-hp:eg/> "
-                + "SELECT ?p ?s "
-                + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
-                + "FROM <http://streamreasoning.org/hospital-data> "
-                + "WHERE { "
-                + "?s a :NaoEncontrado . "
-                + "?p :temSmartphone ?s . "
-                + "?p a :Pessoa . "
-                + "} ";
-
-        String queryBody2 = "REGISTER QUERY staticKnowledge AS "
-                + "PREFIX :<urn:x-hp:eg/> "
-                + "SELECT ?p ?s "
-                + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
-                + "FROM <http://streamreasoning.org/hospital-data> "
-                + "WHERE { "
-                + "?p :temSmartphone ?s ."
-                + "?p a :NaoVeioTrabalhar . "
-                + "} ";
-
-        String queryBody3 = "REGISTER QUERY staticKnowledge AS "
-                + "PREFIX :<urn:x-hp:eg/> "
                 + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-                + "SELECT ?p ?s  "
+                + "SELECT ?s ?t "
                 + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
                 + "FROM <http://streamreasoning.org/hospital-data> "
                 + "WHERE { "
-                + "?p :temSensorMuitoQuente ?s . "
+                + "?s a :SalaPegandoFogo "
+               // + "?s a :SalaPegandoFogo . "
                 + "} ";
 
         File esmocypData = new File(classLoader.getResource("root-ontology-data-1.rdf").getFile());
@@ -71,7 +51,7 @@ public class TestReasoningEsmocyp {
         fbThread.start();
 
         //Register new query in the engine
-        CsparqlQueryResultProxy c = engine.registerQuery(queryBody3, false);
+        CsparqlQueryResultProxy c = engine.registerQuery(queryBody, false);
 
         //Attach a result consumer to the query result proxy to print the results on the console
         c.addObserver(new ConsoleFormatter());

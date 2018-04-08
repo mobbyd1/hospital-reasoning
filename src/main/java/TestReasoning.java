@@ -1,6 +1,4 @@
-import com.hp.hpl.jena.reasoner.rulesys.OWLFBRuleReasoner;
 import eu.larkc.csparql.common.utils.CsparqlUtils;
-import eu.larkc.csparql.common.utils.ReasonerChainingType;
 import eu.larkc.csparql.core.engine.ConsoleFormatter;
 import eu.larkc.csparql.core.engine.CsparqlEngineImpl;
 import eu.larkc.csparql.core.engine.CsparqlQueryResultProxy;
@@ -35,7 +33,7 @@ public class TestReasoning {
                     + "?r :isConnectedTo ?r1 . "
                     + "} ";
 
-            File roomConnection = new File(classLoader.getResource("roomConnection.rdf").getFile());
+            File roomConnection = new File(classLoader.getResource("others/roomConnection.rdf").getFile());
             String roomConnectionPath = roomConnection.getAbsolutePath();
 
             engine.putStaticNamedModel("http://streamreasoning.org/roomConnection", CsparqlUtils.serializeRDFFile(roomConnectionPath));
