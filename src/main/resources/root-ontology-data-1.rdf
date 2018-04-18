@@ -44,13 +44,5 @@
         <rdfs:label>sala1</rdfs:label>
     </NamedIndividual>
 
-    <AllDifferent>
-        <distinctMembers rdf:parseType="Collection">
-            <Thing rdf:about="http://webprotege.stanford.edu/sensor1"/>
-            <Thing rdf:about="http://webprotege.stanford.edu/sensor2"/>
-            <Thing rdf:about="http://webprotege.stanford.edu/sensor3"/>
-        </distinctMembers>
-    </AllDifferent>
-
 </rdf:RDF>
 

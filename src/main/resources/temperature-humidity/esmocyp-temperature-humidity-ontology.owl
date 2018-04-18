@@ -39,12 +39,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temTemperatura -->
+    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temSensorSeco -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temTemperatura">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sensor"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Quente"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temSensorSeco"/>
     
 
 
@@ -56,12 +53,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Quente -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Quente"/>
     
 
 
@@ -82,7 +73,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temSensorMuitoQuente"/>
-                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -110,9 +101,7 @@
 
     <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#muitoQuente -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#muitoQuente">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Quente"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#muitoQuente"/>
     
 
 
@@ -123,6 +112,8 @@
         <temSensor rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor3"/>
         <temSensorMuitoQuente rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor1"/>
         <temSensorMuitoQuente rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor2"/>
+        <temSensorSeco rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor1"/>
+        <temSensorSeco rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor2"/>
         <rdfs:label>sala1</rdfs:label>
     </owl:NamedIndividual>
     
@@ -141,7 +132,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sensor"/>
-        <temTemperatura rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#muitoQuente"/>
         <rdfs:label>sensor2</rdfs:label>
     </owl:NamedIndividual>
     
@@ -153,10 +143,10 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sensor"/>
         <rdfs:label>sensor3</rdfs:label>
     </owl:NamedIndividual>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms
