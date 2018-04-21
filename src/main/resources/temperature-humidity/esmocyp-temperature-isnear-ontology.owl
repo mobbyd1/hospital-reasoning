@@ -22,6 +22,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#isNear -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#isNear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temSensor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#temSensor">
@@ -60,6 +69,24 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala">
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#SalaEmPerigo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#SalaEmPerigo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#isNear"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#SalaPegandoFogo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -123,6 +150,15 @@
         <temSensorSeco rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor1"/>
         <temSensorSeco rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor2"/>
         <rdfs:label>sala1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#Sala"/>
+        <isNear rdf:resource="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala1"/>
     </owl:NamedIndividual>
     
 
@@ -194,6 +230,13 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala1"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor1"/>
         </owl:distinctMembers>
     </rdf:Description>
@@ -208,6 +251,15 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sala2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor2"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#sensor3"/>
         </owl:distinctMembers>
     </rdf:Description>

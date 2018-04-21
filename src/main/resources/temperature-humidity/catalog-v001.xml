@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6" uri="esmocyp-temperature-data.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6" uri="esmocyp-temperature-humidity-ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6" uri="esmocyp-temperature-isnear-ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6" uri="esmocyp-temperature-ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6" uri="esmocyp-temperature.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.w3.org/2002/07/owl" uri="root-ontology-2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524181576537" name="duplicate:http://www.w3.org/2002/07/owl" uri="root-ontology-data-2.rdf"/>
+    </group>
+</catalog>
