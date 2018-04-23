@@ -26,22 +26,22 @@ public class TestReasoningEsmocypTemperature2 {
         engine.initialize();
 
         String queryBody = "REGISTER QUERY staticKnowledge AS "
-                + "PREFIX :<http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#> "
+                + "PREFIX :<http://www.semanticweb.org/esmocyp#> "
                 + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-                + "SELECT ?s "
+                + "SELECT ?s ?t "
                 + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
                 + "FROM <http://streamreasoning.org/hospital-data> "
                 + "WHERE { "
-               // + "?s :temSensorMuitoQuente ?t "
-                + "?s a :SalaPegandoFogo ."
+                //+ "?s :temSensorMuitoQuente ?t "
+                + "?s a :SalaEmPerigo "
                 + "} ";
 
-        File esmocypData = new File(classLoader.getResource("temperature-humidity/esmocyp-temperature-data.rdf").getFile());
+        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade/100-salas/esmocyp-temperature-data.rdf").getFile());
         String roomConnectionPath = esmocypData.getAbsolutePath();
 
         engine.putStaticNamedModel("http://streamreasoning.org/hospital-data", CsparqlUtils.serializeRDFFile(roomConnectionPath));
 
-        HospitalStreamer fb = new HospitalStreamer("http://streamreasoning.org/streams/hospital", "http://www.semanticweb.org/ruhan/ontologies/2018/3/untitled-ontology-6#", 1000L);
+        HospitalStreamer fb = new HospitalStreamer("http://streamreasoning.org/streams/hospital", "http://www.semanticweb.org/esmocyp#", 1000L);
 
         //Register new streams in the engine
         engine.registerStream(fb);
@@ -59,12 +59,12 @@ public class TestReasoningEsmocypTemperature2 {
         File rdfsRulesFile = new File(classLoader.getResource("owl.rules").getFile());
         String rulesPath = rdfsRulesFile.getAbsolutePath();
 
-        File tboxFile = new File(classLoader.getResource("temperature-humidity/esmocyp-temperature-ontology.owl").getFile());
+        File tboxFile = new File(classLoader.getResource("teste-temperatura-humidade/esmocyp-temperature.owl").getFile());
         String tboxPath = tboxFile.getAbsolutePath();
 
         engine.updateReasoner(
                 c.getSparqlQueryId()
-                , CsparqlUtils.fileToString(rulesPath)
+                , null
                 , ReasonerChainingType.BACKWARD
                 , CsparqlUtils.serializeRDFFile(tboxPath) );
 
