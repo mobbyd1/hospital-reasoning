@@ -19,6 +19,19 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#andar1">
+         <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Andar"/>
+         <temCorredor rdf:resource="http://www.semanticweb.org/esmocyp#corredor1"/>
+         <rdfs:label>andar1</rdfs:label>
+     </owl:NamedIndividual>
+
+     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#corredor1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Corredor"/>
+        <temSala rdf:resource="http://www.semanticweb.org/esmocyp#sala1"/>
+        <rdfs:label>corredor1</rdfs:label>
+     </owl:NamedIndividual>
+
+
     <!-- http://www.semanticweb.org/esmocyp#sala1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#sala1">
