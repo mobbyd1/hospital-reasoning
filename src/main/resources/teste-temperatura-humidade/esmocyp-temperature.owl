@@ -48,7 +48,7 @@
        </owl:Class>
 
 
-       <!-- http://www.semanticweb.org/esmocyp#SalaPegandoFogo -->
+       <!-- http://www.semanticweb.org/esmocyp#SalaEmPerigo -->
 
        <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#SalaEmPerigo">
            <owl:equivalentClass>
