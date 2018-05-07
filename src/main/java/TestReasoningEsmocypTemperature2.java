@@ -33,10 +33,10 @@ public class TestReasoningEsmocypTemperature2 {
                 + "FROM <http://streamreasoning.org/hospital-data> "
                 + "WHERE { "
                 //+ "?s :temSensorMuitoQuente ?t "
-                + "?s a :SalaEmPerigo "
+                + "?s a :AndarEmPerigo "
                 + "} ";
 
-        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade/100-salas/esmocyp-temperature-data.rdf").getFile());
+        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade-corredor-andar/esmocyp-data.rdf").getFile());
         String roomConnectionPath = esmocypData.getAbsolutePath();
 
         engine.putStaticNamedModel("http://streamreasoning.org/hospital-data", CsparqlUtils.serializeRDFFile(roomConnectionPath));
@@ -50,7 +50,7 @@ public class TestReasoningEsmocypTemperature2 {
         //Start streaming data
         fbThread.start();
 
-        //Register new query in the engine
+        //Register new query in the enxgine
         CsparqlQueryResultProxy c = engine.registerQuery(queryBody, false);
 
         //Attach a result consumer to the query result proxy to print the results on the console
@@ -59,7 +59,7 @@ public class TestReasoningEsmocypTemperature2 {
         File rdfsRulesFile = new File(classLoader.getResource("owl.rules").getFile());
         String rulesPath = rdfsRulesFile.getAbsolutePath();
 
-        File tboxFile = new File(classLoader.getResource("teste-temperatura-humidade/esmocyp-temperature.owl").getFile());
+        File tboxFile = new File(classLoader.getResource("teste-temperatura-humidade-corredor-andar/esmocyp-temperature-corredor-andar.owl").getFile());
         String tboxPath = tboxFile.getAbsolutePath();
 
         engine.updateReasoner(

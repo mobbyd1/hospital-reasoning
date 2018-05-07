@@ -21,8 +21,8 @@
 
    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#sala1">
       <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Sala"/>
-       <temSensorMuitoQuente rdf:resource="http://www.semanticweb.org/esmocyp#sensor1"/>
-       <temSensorMuitoQuente rdf:resource="http://www.semanticweb.org/esmocyp#sensor2"/>
+       <temSensor rdf:resource="http://www.semanticweb.org/esmocyp#sensor1"/>
+       <temSensor rdf:resource="http://www.semanticweb.org/esmocyp#sensor2"/>
        <temSensor rdf:resource="http://www.semanticweb.org/esmocyp#sensor3"/>
       <rdfs:label>sala1</rdfs:label>
    </owl:NamedIndividual>
