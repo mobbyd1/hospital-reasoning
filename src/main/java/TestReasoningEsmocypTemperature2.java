@@ -28,15 +28,16 @@ public class TestReasoningEsmocypTemperature2 {
         String queryBody = "REGISTER QUERY staticKnowledge AS "
                 + "PREFIX :<http://www.semanticweb.org/esmocyp#> "
                 + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                + "PREFIX sosa: <http://www.w3.org/ns/sosa#> "
+                + "PREFIX ssn: <http://www.w3.org/ns/ssn#> "
                 + "SELECT ?s ?t "
                 + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
                 + "FROM <http://streamreasoning.org/hospital-data> "
                 + "WHERE { "
-                //+ "?s :temSensorMuitoQuente ?t "
-                + "?s a :SalaEmPerigo "
+                + "?s a ?t "
                 + "} ";
 
-        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade/100-salas/esmocyp-temperature-data.rdf").getFile());
+        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade/1-sala/esmocyp-temperature-data.rdf").getFile());
         String roomConnectionPath = esmocypData.getAbsolutePath();
 
         engine.putStaticNamedModel("http://streamreasoning.org/hospital-data", CsparqlUtils.serializeRDFFile(roomConnectionPath));

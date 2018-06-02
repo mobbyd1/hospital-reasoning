@@ -65,7 +65,7 @@
 
     <!-- http://www.semanticweb.org/esmocyp#SalaPegandoFogo -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#SalaPegandoFogo">
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#SalaEmPerigo">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
