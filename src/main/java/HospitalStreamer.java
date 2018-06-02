@@ -43,13 +43,12 @@ public class HospitalStreamer extends RdfStream implements Runnable  {
 		while(true){
 			try{
 
-				senderIndex = random.nextInt(5);
+				String subject = baseUri + "sala1";
+				String predicate = baseUri + "temSensorMuitoQuente";
+				String object = baseUri + "sensor1";
 
-				RdfQuadruple q = new RdfQuadruple(baseUri + "pessoa" + senderIndex, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", baseUri + "Medico", System.currentTimeMillis());
+				RdfQuadruple q = new RdfQuadruple(subject, predicate, object, System.currentTimeMillis());
 				this.put(q);
-
-				RdfQuadruple q2 = new RdfQuadruple(baseUri + "smartphoneDoRuhan", "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", baseUri + "NaoEncontrado", System.currentTimeMillis());
-				this.put(q2);
 
 				Thread.sleep(sleepTime);
 

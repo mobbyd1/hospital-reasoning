@@ -28,16 +28,15 @@ public class TestReasoningEsmocypTemperature2 {
         String queryBody = "REGISTER QUERY staticKnowledge AS "
                 + "PREFIX :<http://www.semanticweb.org/esmocyp#> "
                 + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-                + "PREFIX sosa: <http://www.w3.org/ns/sosa#> "
-                + "PREFIX ssn: <http://www.w3.org/ns/ssn#> "
                 + "SELECT ?s ?t "
                 + "FROM STREAM <http://streamreasoning.org/streams/hospital> [RANGE 1s STEP 1s] "
                 + "FROM <http://streamreasoning.org/hospital-data> "
                 + "WHERE { "
-                + "?s a ?t "
+                //+ "?s :temSensorMuitoQuente ?t "
+                + "?s a :AndarEmPerigo "
                 + "} ";
 
-        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade/1-sala/esmocyp-temperature-data.rdf").getFile());
+        File esmocypData = new File(classLoader.getResource("teste-temperatura-humidade-corredor-andar/esmocyp-data.rdf").getFile());
         String roomConnectionPath = esmocypData.getAbsolutePath();
 
         engine.putStaticNamedModel("http://streamreasoning.org/hospital-data", CsparqlUtils.serializeRDFFile(roomConnectionPath));
@@ -51,7 +50,7 @@ public class TestReasoningEsmocypTemperature2 {
         //Start streaming data
         fbThread.start();
 
-        //Register new query in the engine
+        //Register new query in the enxgine
         CsparqlQueryResultProxy c = engine.registerQuery(queryBody, false);
 
         //Attach a result consumer to the query result proxy to print the results on the console
@@ -60,7 +59,7 @@ public class TestReasoningEsmocypTemperature2 {
         File rdfsRulesFile = new File(classLoader.getResource("owl.rules").getFile());
         String rulesPath = rdfsRulesFile.getAbsolutePath();
 
-        File tboxFile = new File(classLoader.getResource("teste-temperatura-humidade/esmocyp-temperature.owl").getFile());
+        File tboxFile = new File(classLoader.getResource("teste-temperatura-humidade-corredor-andar/esmocyp-temperature-corredor-andar.owl").getFile());
         String tboxPath = tboxFile.getAbsolutePath();
 
         engine.updateReasoner(
