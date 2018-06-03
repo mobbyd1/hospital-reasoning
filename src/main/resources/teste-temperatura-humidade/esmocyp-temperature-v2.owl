@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/esmocyp#"
+     xml:base="http://www.semanticweb.org/esmocyp"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:untitled-ontology-6="http://www.semanticweb.org/esmocyp#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/esmocyp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#hasDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/esmocyp#hasDevice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/esmocyp#Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/esmocyp#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/esmocyp#observes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/esmocyp#SensingDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/esmocyp#FeatureOfInterest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#DangerousRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#DangerousRoom">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#Room"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/esmocyp#hasDevice"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#TemperatureSensor"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/esmocyp#observes"/>
+                                        <owl:hasValue rdf:resource="http://www.semanticweb.org/esmocyp#highTemperature"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#Device"/>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#FeatureOfInterest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#Room"/>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#SensingDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#SensingDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/esmocyp#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#Temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/esmocyp#FeatureOfInterest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/esmocyp#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/esmocyp#SensingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#highTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#highTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#lowTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#lowTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#normalTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#normalTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#room1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#room1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#Room"/>
+        <hasDevice rdf:resource="http://www.semanticweb.org/esmocyp#temperatureSensor1"/>
+        <hasDevice rdf:resource="http://www.semanticweb.org/esmocyp#temperatureSensor2"/>
+        <hasDevice rdf:resource="http://www.semanticweb.org/esmocyp#temperatureSensor3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#temperatureSensor1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#TemperatureSensor"/>
+        <observes rdf:resource="http://www.semanticweb.org/esmocyp#highTemperature"/>
+        <observes rdf:resource="http://www.semanticweb.org/esmocyp#lowTemperature"/>
+        <observes rdf:resource="http://www.semanticweb.org/esmocyp#normalTemperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#temperatureSensor2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#TemperatureSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/esmocyp#temperatureSensor3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/esmocyp#TemperatureSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#room1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/esmocyp#temperatureSensor3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
